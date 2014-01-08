@@ -21,7 +21,8 @@
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
     <option name="TEMPLATE_FOLDERS">
       <list>
-        <option value="C:\thomas\projects\djangotut\templates" />
+        <option value="$MODULE_DIR$/polls/templates" />
+        <option value="$MODULE_DIR$/djangotut/templates" />
       </list>
     </option>
   </component>
