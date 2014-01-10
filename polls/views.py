@@ -17,6 +17,9 @@ class DetailView(generic.DetailView):
     model = Poll
     template_name = 'polls/detail.html'
 
+    def get_queryset(self):
+        return Poll.objects.filter(pub_date__lte=timezone.now())
+
 class ResultsView(generic.DetailView):
     model = Poll
     template_name = 'polls/results.html'
@@ -34,3 +37,5 @@ def vote(request, poll_id):
         selected_choice.votes += 1
         selected_choice.save()
         return HttpResponseRedirect(reverse('polls:results', args=(p.id,)))
+
+
